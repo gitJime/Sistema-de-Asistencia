@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Registro de Asistencias</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+  <!-- Estilos personalizados -->
+  <style>
+    body {
+      background-color: #ebedee;
+    }
+    .jumbotron {
+      background-color: #d3d5d6;
+      color: #1c1c1c;
+    }
+    .hora-fecha {
+      text-align: center;
+      margin-top: 20px;
+      background-color: #d3d5d6;
+      color: #0a0a0a;
+      padding: 10px;
+      border-radius: 10px;
+    }
+    .edificio-hora-fecha {
+      display: flex;
+      justify-content: space-between;
+    }
+    .card {
+      border: 2px solid #b8c4d1;
+      border-radius: 15px;
+    }
+    .table th, .table td {
+      text-align: center;
+    }
+    .table th {
+      background-color: #121313;
+      color: #fff;
+    }
+    .btn-primary {
+      background-color: #6cd84e;
+      border-color: #007bff;
+    }
+    .btn-primary:hover {
+      background-color: #0056b3;
+      border-color: #0056b3;
+    }
+    #success-alert {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Jumbotron -->
+  <div class="jumbotron text-center">
+    <h1 class="display-4">Registro de Asistencias</h1>
+    <p class="lead">Bienvenido al sistema de registro de asistencias.</p>
+    <hr class="my-4">
+    <p>Registra la asistencia de los profesores en tiempo real.</p>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+          <h4 class="mb-0">Registro de Asistencias</h4>
+        </div>
+        <div class="card-body">
+          <!-- Edificio, Hora y Fecha -->
+          <div class="hora-fecha animated fadeIn">
+            <div class="edificio-hora-fecha">
+              <div class="col-6">
+                <h5>Edificio A</h5>
+              </div>
+              <div class="col-6 text-right">
+                <div>
+                  <span class="font-weight-bold">Hora:</span> <span id="hora"></span>
+                  <span class="ml-3 font-weight-bold">Fecha:</span> <span id="fecha"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tabla de Aulas y Profesores -->
+          <div class="table-responsive animated fadeIn">
+            <table class="table table-bordered table-striped">
+              <!-- Encabezado de la tabla -->
+              <thead class="thead-dark">
+                <tr>
+                  <th>Aula</th>
+                  <th>Profesor</th>
+                  <th>Asistencia</th>
+                </tr>
+              </thead>
+              <!-- Cuerpo de la tabla -->
+              <tbody>
+                <!-- Aulas y profesores -->
+                <!-- Aula 1 -->
+                <tr>
+                  <td>Aula 1</td>
+                  <td>Profesor 1</td>
+                  <td>
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                      <label class="btn btn-outline-primary">
+                        <input type="radio" name="asistencia1" id="asistio1" value="asistio"> Asistió
+                      </label>
+                      <label class="btn btn-outline-primary">
+                        <input type="radio" name="asistencia1" id="noAsistio1" value="no-asistio"> No Asistió
+                      </label>
+                      <label class="btn btn-outline-primary">
+                        <input type="radio" name="asistencia1" id="retardo1" value="justificado"> Justificado
+                      </label>
+                      <label class="btn btn-outline-primary">
+                        <input type="radio" name="asistencia3" id="retardo3" value="retardo"> Retardo
+                      </label>
+                    </div>
+                  </td>
+                </tr>
+                <!-- Aula 2 -->
+                <tr>
+                  <td>Aula 2</td>
+                  <td>Profesor 2</td>
+                  <td>
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                      <label class="btn btn-outline-primary">
+                        <input type="radio" name="asistencia2" id="asistio2" value="asistio"> Asistió
+                      </label>
+                      <label class="btn btn-outline-primary">
+                        <input type="radio" name="asistencia2" id="noAsistio2" value="no-asistio"> No Asistió
+                      </label>
+                      <label class="btn btn-outline-primary">
+                        <input type="radio" name="asistencia2" id="retardo2" value="justificado"> Justificado
+                      </label>
+                      <label class="btn btn-outline-primary">
+                        <input type="radio" name="asistencia3" id="retardo3" value="retardo"> Retardo
+                      </label>
+                    </div>
+                  </td>
+                </tr>
+                <!-- Aula 3 -->
+                <tr>
+                  <td>Aula 3</td>
+                  <td>Profesor 3</td>
+                  <td>
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                      <label class="btn btn-outline-primary">
+                        <input type="radio" name="asistencia3" id="asistio3" value="asistio"> Asistió
+                      </label>
+                      <label class="btn btn-outline-primary">
+                        <input type="radio" name="asistencia3" id="noAsistio3" value="no-asistio"> No Asistió
+                      </label>
+                      <label class="btn btn-outline-primary">
+                        <input type="radio" name="asistencia3" id="retardo3" value="justificado"> Justificado
+                      </label>
+                      <label class="btn btn-outline-primary">
+                        <input type="radio" name="asistencia3" id="retardo3" value="retardo"> Retardo
+                      </label>
+                    </div>
+                  </td>
+                </tr>
+                <!-- Agrega más aulas según sea necesario -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Botón para registrar asistencia -->
+          <button class="btn btn-primary" onclick="registrarAsistencia()">Registrar Asistencia</button>
+
+          <!-- Alerta para mostrar mensajes -->
+          <div class="alert alert-success mt-3" role="alert" id="success-alert">
+            <i class="fas fa-check-circle"></i> Asistencia registrada con éxito.
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS y dependencias -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script>
+  function registrarAsistencia() {
+    // Implementa la lógica para registrar la asistencia aquí.
+    // Puedes hacer que aparezca la alerta de éxito o realizar otras acciones.
+    document.getElementById('success-alert').style.display = 'block';
+  }
+
+  // Configura la hora y la fecha actuales
+  var fechaHoraActual = new Date();
+  
+  var fechaActual = fechaHoraActual.toISOString().split('T')[0];
+  var horaActual = fechaHoraActual.toTimeString().split(' ')[0];
+
+  // Configura la fecha y la hora en los campos correspondientes
+  document.getElementById('fecha').innerText = fechaActual;
+  document.getElementById('hora').innerText = horaActual;
+</script>
+
+</body>
+</html>

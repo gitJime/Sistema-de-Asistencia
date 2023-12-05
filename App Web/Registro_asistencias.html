@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Registro de Asistencias</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+  <!-- Estilos personalizados -->
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .hora-fecha {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .edificio-hora-fecha {
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+          <h4 class="mb-0">Registro de Asistencias</h4>
+        </div>
+        <div class="card-body">
+          <!-- Edificio, Hora y Fecha -->
+          <div class="hora-fecha">
+            <div class="edificio-hora-fecha">
+              <div class="col-6">
+                <h5>Edificio A</h5>
+              </div>
+              <div class="col-6 text-right">
+                <div>
+                  <span>Hora: <span id="hora"></span></span>
+                  <span>Fecha: <span id="fecha"></span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tabla de Aulas y Profesores -->
+          <div class="table-responsive">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Aula</th>
+                  <th>Profesor</th>
+                  <th>Asistencia</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Aula 1 -->
+                <tr>
+                  <td>Aula 1</td>
+                  <td>Profesor 1</td>
+                  <td>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="asistencia1" id="asistio1" value="asistio">
+                      <label class="form-check-label" for="asistio1">Asistió</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="asistencia1" id="noAsistio1" value="no-asistio">
+                      <label class="form-check-label" for="noAsistio1">No Asistió</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="asistencia1" id="retardo1" value="justificado">
+                      <label class="form-check-label" for="retardo1">Justificado</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="asistencia3" id="retardo3" value="retardo">
+                      <label class="form-check-label" for="retardo3">Retardo</label>
+                    </div>
+                  </td>
+                </tr>
+                <!-- Aula 2 -->
+                <tr>
+                  <td>Aula 2</td>
+                  <td>Profesor 2</td>
+                  <td>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="asistencia2" id="asistio2" value="asistio">
+                      <label class="form-check-label" for="asistio2">Asistió</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="asistencia2" id="noAsistio2" value="no-asistio">
+                      <label class="form-check-label" for="noAsistio2">No Asistió</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="asistencia2" id="retardo2" value="justificado">
+                      <label class="form-check-label" for="retardo2">Justificado</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="asistencia3" id="retardo3" value="retardo">
+                      <label class="form-check-label" for="retardo3">Retardo</label>
+                    </div>
+                  </td>
+                </tr>
+                <!-- Aula 3 -->
+                <tr>
+                  <td>Aula 3</td>
+                  <td>Profesor 3</td>
+                  <td>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="asistencia3" id="asistio3" value="asistio">
+                      <label class="form-check-label" for="asistio3">Asistió</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="asistencia3" id="noAsistio3" value="no-asistio">
+                      <label class="form-check-label" for="noAsistio3">No Asistió</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="asistencia3" id="retardo3" value="justificado">
+                      <label class="form-check-label" for="retardo3">Justificado</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="asistencia3" id="retardo3" value="retardo">
+                      <label class="form-check-label" for="retardo3">Retardo</label>
+                    </div>
+                  </td>
+                </tr>
+                <!-- Agrega más aulas según sea necesario -->
+              </tbody>
+            </table>
+          </div>
+
+        
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS y dependencias -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<script>
+  function registrarAsistencia() {
+    // Implementa la lógica para registrar la asistencia aquí.
+    alert('Asistencia registrada con éxito.'); // Esto es solo un ejemplo.
+  }
+
+  // Configura la hora y la fecha actuales
+  var fechaHoraActual = new Date();
+  
+  var fechaActual = fechaHoraActual.toISOString().split('T')[0];
+  var horaActual = fechaHoraActual.toTimeString().split(' ')[0];
+
+  // Configura la fecha y la hora en los campos correspondientes
+  document.getElementById('fecha').innerText = fechaActual;
+  document.getElementById('hora').innerText = horaActual;
+</script>
+
+</body>
+</html>

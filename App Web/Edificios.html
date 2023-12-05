@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Selección de Edificio</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <!-- Estilos personalizados -->
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .container {
+      margin-top: 50px;
+    }
+    .btn-edificio {
+      width: 200px;
+      height: 200px;
+      font-size: 16px;
+      margin: 10px;
+      font-size: 18px;
+      background-color: #ffffff;
+      color: rgb(9, 9, 9);
+      border: 3px solid #007bff;
+      border-radius: 15px;
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+          <h4 class="mb-0">Selecciona un Edificio</h4>
+        </div>
+        <div class="card-body">
+          <!-- Botones de Edificio -->
+          <div class="row">
+            <div class="col-6 col-md-3 mb-3">
+              <button class="btn btn-info btn-edificio" onclick="seleccionarEdificio('A')">Edificio A</button>
+            </div>
+            <div class="col-6 col-md-3 mb-3">
+              <button class="btn btn-info btn-edificio" onclick="seleccionarEdificio('B')">Edificio B</button>
+            </div>
+            <div class="col-6 col-md-3 mb-3">
+              <button class="btn btn-info btn-edificio" onclick="seleccionarEdificio('C')">Edificio C</button>
+            </div>
+            <div class="col-6 col-md-3 mb-3">
+              <button class="btn btn-info btn-edificio" onclick="seleccionarEdificio('E')">Edificio E</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS y dependencias -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<script>
+  function seleccionarEdificio(edificio) {
+    // Redirigir a la página de asistencia con el edificio seleccionado
+    window.location.href = 'Registro_asistencias.html?edificio=' + edificio;
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Gráfico Personalizado</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Estilos personalizados -->
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .container {
+      margin-top: 50px;
+    }
+    canvas {
+      max-width: 100%; /* Asegura que el gráfico se ajuste al contenedor */
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+          <h4 class="mb-0">Gráfico Personalizado</h4>
+        </div>
+        <div class="card-body">
+          <!-- Gráfico de Barras -->
+          <canvas id="miGrafico"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS y dependencias -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<script>
+  // Datos para el gráfico
+  var datos = {
+    labels: ['Edificio A', 'Edificio B', 'Edificio C', 'Edificio E'],
+    datasets: [{
+      label: 'Asistencias',
+      data: [30, 45, 20, 15], // Puedes cambiar estos valores según tus necesidades
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.7)',
+        'rgba(75, 192, 192, 0.7)',
+        'rgba(255, 205, 86, 0.7)',
+        'rgba(54, 162, 235, 0.7)'
+      ],
+      borderColor: [
+        'rgba(255, 99, 132, 1)',
+        'rgba(75, 192, 192, 1)',
+        'rgba(255, 205, 86, 1)',
+        'rgba(54, 162, 235, 1)'
+      ],
+      borderWidth: 1
+    }]
+  };
+
+  // Configuración del gráfico
+  var opciones = {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  };
+
+  // Obtener el contexto del lienzo
+  var contexto = document.getElementById('miGrafico').getContext('2d');
+
+  // Crear el gráfico de barras
+  var miGrafico = new Chart(contexto, {
+    type: 'bar',
+    data: datos,
+    options: opciones
+  });
+</script>
+
+</body>
+</html>
